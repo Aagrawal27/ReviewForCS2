@@ -1,6 +1,3 @@
-import java.text.DecimalFormat;
-import java.util.Random;
-
 /**
  * CS2 Review Assignment!
  * Do NOT use ChatGPT or any other generative AI to assist you with this assignment
@@ -49,8 +46,8 @@ public class JavaBeansAndBytes {
 
         // TODO
         // Create two CoffeeDrink objects
-        CoffeeDrink AaravOrder = new CoffeeDrink(1,"Chocolate", true);
-        CoffeeDrink DemonicCoffee = new CoffeeDrink(-5,"Battery Acid", false);
+        Drink AaravOrder = new Drink(1,"Chocolate", true);
+        Drink DemonicCoffee = new Drink(1000,"Not", false);
 
         // TODO
         // Print out the order details
@@ -109,17 +106,17 @@ public class JavaBeansAndBytes {
     public void baristasChoice() {
         // TODO
         // Make this method generate a random decimal between 0 and 1
-        int Rec = (int)(5*Math.random());
-
+        int Rec = (int)(4*Math.random());
+        System.out.print("Recommended drink today is: ");
         // and print one of four drink recommendations based on its value.
-        if(Rec <=1){
-            System.out.println("Recommended drink today is: Ice Cold Chocolate.");
+        if(Rec ==0 ){
+            System.out.println("Ice Cold Chocolate.");
+        }else if(Rec ==1){
+            System.out.println("Cool Chocolate.");
         }else if(Rec ==2){
-            System.out.println("Recommended drink today is: Cool Chocolate.");
+            System.out.println("Lukewarm Chocolate.");
         }else if(Rec ==3){
-            System.out.println("Recommended drink today is: Lukewarm Chocolate.");
-        }else if(Rec ==4){
-            System.out.println("Recommended drink today is: Scalding Chocolate.");
+            System.out.println("Scalding Chocolate.");
         }
     }
 }
