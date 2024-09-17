@@ -49,9 +49,13 @@ public class JavaBeansAndBytes {
 
         // TODO
         // Create two CoffeeDrink objects
+        CoffeeDrink AaravOrder = new CoffeeDrink(1,"Chocolate", true);
+        CoffeeDrink DemonicCoffee = new CoffeeDrink(-5,"Battery Acid", false);
 
         // TODO
         // Print out the order details
+        AaravOrder.printInfo();
+        DemonicCoffee.printInfo();
 
 
     }
@@ -97,13 +101,26 @@ public class JavaBeansAndBytes {
         for (int i = 8; i>-1; i-=1){
             System.out.print(i + " ");
         }
+
+        System.out.print("\n");
     }
 
     // Method to recommend a coffee based on a random number
     public void baristasChoice() {
         // TODO
         // Make this method generate a random decimal between 0 and 1
+        int Rec = (int)(5*Math.random());
+
         // and print one of four drink recommendations based on its value.
+        if(Rec <=1){
+            System.out.println("Recommended drink today is: Ice Cold Chocolate.");
+        }else if(Rec ==2){
+            System.out.println("Recommended drink today is: Cool Chocolate.");
+        }else if(Rec ==3){
+            System.out.println("Recommended drink today is: Lukewarm Chocolate.");
+        }else if(Rec ==4){
+            System.out.println("Recommended drink today is: Scalding Chocolate.");
+        }
     }
 }
 
