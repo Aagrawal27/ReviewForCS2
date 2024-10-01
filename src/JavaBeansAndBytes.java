@@ -3,6 +3,7 @@
  * Do NOT use ChatGPT or any other generative AI to assist you with this assignment
  * You may reference your own past work and the internet (not including AI)
  */
+import java.util.Scanner;
 
 public class JavaBeansAndBytes {
 
@@ -10,6 +11,7 @@ public class JavaBeansAndBytes {
     String name;
     boolean isOpen;
     int yearFounded;
+    Scanner drinkorder = new Scanner(System.in);
 
     public static void main(String[] args) {
         // Create a new CoffeeShop instance to run everything.
@@ -46,13 +48,24 @@ public class JavaBeansAndBytes {
 
         // TODO
         // Create two CoffeeDrink objects
-        Drink AaravOrder = new Drink(1,"Chocolate", true);
-        Drink DemonicCoffee = new Drink(1000,"Not", false);
+        System.out.println("What is the name of this order?");
+        String orderName = drinkorder.nextLine();
+
+        System.out.println("What flavor of drink would you like?");
+        String flavor = drinkorder.nextLine();
+
+        System.out.println("How many cups would you like?");
+        Integer amountOfCups = drinkorder.nextInt();
+
+        System.out.println("Do you want whipped cream with your order? (True or False)");
+        Boolean yWhippedCream = drinkorder.nextBoolean();
+
+        Drink newOrder = new Drink(amountOfCups, flavor, yWhippedCream, orderName);
+
 
         // TODO
         // Print out the order details
-        AaravOrder.printInfo();
-        DemonicCoffee.printInfo();
+        newOrder.printInfo();
 
 
     }
@@ -62,8 +75,13 @@ public class JavaBeansAndBytes {
         // TODO
         // Make this method generate a random integer discount (0-30%)
         int RandDis = (int)(31*Math.random());
+        // while method
+        while(RandDis<26){
+            RandDis = (int)(31*Math.random());
+        }
         // and print the result.
-        System.out.println("Today's discount is: " + RandDis + "% !");
+//        System.out.println("Today's discount is: " + RandDis + "% !");
+        
     }
 
     // Method with a parameter for the special of the day
